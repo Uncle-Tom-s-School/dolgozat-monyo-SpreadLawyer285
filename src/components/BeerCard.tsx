@@ -1,7 +1,25 @@
-const BeerCard = () => {
-  return (
-    <div className='beerCard'>Beer Card</div>
-  )
-}
+export type BeerCardProps = {
+  image: string;
+  name: string;
+  abv: string;
+  volume: string;
+  price: number;
+  available: boolean;
+};
 
-export default BeerCard
+const BeerCard = (props: BeerCardProps) => {
+  return (
+    <div className="beerCard">
+      <img src={props.image} alt={props.name} />
+      <h3>
+        {props.name} {props.abv} {props.volume}
+      </h3>
+      <p>{props.price} Ft</p>
+      <p className={props.available ? "available" : "notAvailable"}>
+        {props.available ? "Raktáron" : "Nincs raktáron"}
+      </p>
+    </div>
+  );
+};
+
+export default BeerCard;
