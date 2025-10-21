@@ -15,9 +15,9 @@ const BeerCard = (props: BeerCardProps) => {
         {props.name} {props.abv} {props.volume}
       </h3>
       <p>{props.price} Ft</p>
-      <p className={props.available ? "available" : "notAvailable"}>
+      <strong className={props.available ? "available" : "notAvailable"}>
         {props.available ? "Raktáron" : "Nincs raktáron"}
-      </p>
+      </strong>
     </div>
   );
 };
